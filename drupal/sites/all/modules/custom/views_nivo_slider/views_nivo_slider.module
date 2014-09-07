@@ -211,7 +211,12 @@ function template_preprocess_views_nivo_slider_view_nivo_sliderfields(&$vars) {
   $img = (!$presetname) ? theme('image', $params) : theme('image_style', $params);
 
   if ($link) {
-    $img = l($img, $link, array('html' => TRUE, 'attributes' => array('class' => 'views-processed')));
+    $img = l($img, $link, array(
+      'html' => TRUE,
+      'attributes' => array(
+	'class' => array('views-processed')
+      ),
+    ));
   }
 
   $vars['content'] = $img;
